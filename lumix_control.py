@@ -245,6 +245,11 @@ class CameraControl:
 		resp = r.get(self.baseurl, params = params)
 		return resp
 
+	def get_state(self):
+		params = {"mode": "getstate"}
+		resp = r.get(self.baseurl, params = params)
+		return resp
+
 	def check_response(self, resp):
 		if "<result>ok</result" in resp.text:
 			return True
